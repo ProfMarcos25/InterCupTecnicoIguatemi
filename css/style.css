@@ -1,0 +1,323 @@
+/* static/css/style.css */
+
+/* Reset básico e estilo geral do corpo da página */
+body {
+    background-color: #000;
+    color: #0f0;
+    font-family: 'Nimbus Mono', 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+}
+
+/* RECOMENDAÇÃO: Use esta classe para todos os contêineres principais */
+.main-container {
+    width: 100%;
+    max-width: 800px;  /* Largura máxima para um bom visual */
+    margin: 40px auto; /* Centraliza na página com um bom espaçamento */
+    padding: 30px;
+    border: 1px solid #0f0;
+    box-sizing: border-box;
+}
+
+/* Adiciona esta regra para remover a borda APENAS da tela inicial */
+#terminal-container.main-container {
+    border: none;
+    padding: 0;
+    font-size: 25px; /* Mantém o tamanho da fonte da história */
+}
+
+/* Estiliza o texto que será digitado para manter a formatação */
+#texto-historia, #texto-boas-vindas {
+    white-space: pre-wrap;
+    text-align: left;
+    line-height: 1.6;
+    font-size: 25px;
+}
+
+/* Centraliza o contêiner da mensagem de boas vindas */
+.mensagem-boas-vindas {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo do formulário de cadastro */
+#cadastro-container {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+#cadastro-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+#cadastro-form input {
+    font-size: 25px;
+    background-color: #111;
+    border: 1px solid #0f0;
+    color: #0f0;
+    padding: 10px;
+    width: 30%;
+    margin-bottom: 20px;
+    font-family: inherit;
+}
+
+#button-grupo  {
+    background-color: #0f0;
+    color: #000;
+    border: 5px solid #0f0;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    width: 15%;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+#button-grupo:hover {
+    background-color: #000;
+    color: #0f0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilo para mensagem de erro no formulário */
+.error-text {
+    color: #ff4136; /* Vermelho */
+    min-height: 20px;
+    font-weight: bold;
+}
+
+/* ==================================== */
+/* === ESTILOS DA PÁGINA DE DESAFIOS === */
+/* ==================================== */
+
+/* ROTEIRO */
+#roteiro-desafios {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2em;
+}
+#roteiro-desafios span {
+    margin-right: 10px;
+}
+
+/* QUIZ V/F - DESAFIO 1 */
+.quiz-question {
+    border-bottom: 1px dashed #0f0;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+.quiz-question p {
+    margin-bottom: 10px;
+}
+#quiz-form label {
+    margin-right: 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+#quiz-form button {
+    background-color: #0f0;
+    color: #000;
+    border: 1px solid #0f0;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Áreas de feedback/output genéricas */
+.feedback-area, .output-area {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 15px;
+    background-color: #0a0a0a;
+    border: 1px solid #0f0;
+    padding: 10px;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    overflow-y: auto;
+}
+
+/* Ajustes genéricos para os inputs e botões dos desafios */
+.code-input-area {
+    width: 100%;
+    height: 150px;
+    background-color: #0a0a0a;
+    color: #0f0;
+    border: 1px solid #0f0;
+    resize: none;
+    font-family: inherit;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.run-button {
+    background-color: #0f0;
+    color: #000;
+    border: 1px solid #0f0;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+/* ==================================== */
+/* === ESTILOS DO PRISM.JS (SYNTAX) === */
+/* ==================================== */
+.coluna-instrucoes pre {
+    background-color: #0a0a0a;
+    border: 1px solid #0f0;
+    padding: 15px;
+    white-space: pre-wrap;
+    color: #ddd;
+}
+
+.coluna-instrucoes code {
+    font-family: 'Nimbus Mono', 'Courier New', monospace;
+}
+
+pre[class*="language-"] {
+    background: #0a0a0a;
+    border: 1px solid #0f0;
+}
+.token.keyword { color: #66d9ef; } /* Azul Ciano */
+.token.function { color: #e6db74; } /* Amarelo */
+.token.string { color: #e96b50; } /* Laranja/Coral */
+.token.punctuation { color: #f8f8f2; } /* Branco */
+.token.comment { color: #75715e; } /* Cinza */
+.token.number { color: #ae81ff; } /* Roxo */
+
+/* ==================================== */
+/* === ESTILOS DA TELA DE VITÓRIA   === */
+/* ==================================== */
+#success-container {
+    display: block;
+    text-align: center;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    border: 1px solid #0f0;
+    box-sizing: border-box;
+}
+
+#success-output {
+    font-size: 24px;
+    line-height: 1.8;
+    color: #00ff00;
+    white-space: pre-wrap;
+    font-family: 'Nimbus Mono', 'Courier New', monospace;
+    margin-bottom: 40px;
+}
+
+#ranking-container h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #0f0;
+    text-transform: uppercase;
+}
+
+#ranking-table {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 600px;
+    display: inline-block; /* Ajuda na centralização */
+}
+.ranking {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+}
+.ranking th, .ranking td {
+    border: 1px solid #0f0;
+    padding: 12px 15px;
+    text-align: left;
+}
+.ranking th {
+    background-color: #0f0;
+    color: #000;
+    text-align: center;
+}
+.ranking tr:nth-child(even) {
+    background-color: #0a0a0a;
+}
+.ranking td:last-child {
+    text-align: center;
+    font-weight: bold;
+}
+
+.restart-button {
+    display: inline-block;
+    background-color: #0f0;
+    color: #000;
+    border: 1px solid #0f0;
+    padding: 12px 25px;
+    margin-top: 40px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.restart-button:hover {
+    background-color: #000;
+    color: #0f0;
+}
+
+
+body {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Padrão */
+}
+
+/* REATIVA a seleção de texto APENAS nas áreas onde o aluno digita */
+.code-input-area,
+#group-name-input {
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* Adicione ao final do seu style.css */
+
+/* Contêiner para alinhar os botões finais */
+.final-actions {
+    margin-top: 40px;
+}
+
+/* Estilo para o novo botão de zerar ranking */
+.reset-button {
+    background-color: #ff4136; /* Cor vermelha para indicar "perigo" */
+    color: #fff; /* Texto branco */
+    border: 1px solid #ff4136;
+    padding: 12px 25px;
+    margin-left: 15px; /* Espaço entre os dois botões */
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background-color: #000;
+    color: #ff4136;
+}
+
+/* Pequeno ajuste no botão de restart para alinhar bem */
+.restart-button {
+    margin-top: 0; /* Removido, pois o .final-actions já tem margem */
+}
