@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Enigma da Escola - Os Desafios</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+</head>
+
+<body>
+
+    <div id="welcome-container" class="main-container">
+        <div class="mensagem-boas-vindas">
+            <p id="texto-boas-vindas"></p>
+        </div>
+    </div>
+
+    <div id="roteiro-container" class="main-container hidden">
+        <h2>Roteiro da Missão</h2>
+        <div id="roteiro-desafios">
+            <div id="roteiro-1"><span>🔒</span> Desafio 1</div>
+            <div id="roteiro-2"><span>🔒</span> Desafio 2</div>
+            <div id="roteiro-3"><span>🔒</span> Desafio 3</div>
+        </div>
+    </div>
+
+    <div id="challenges-master-container" class="main-container hidden">
+        <div id="challenge-1-container" class="challenge-box hidden">
+            <h3>Desafio 1: Decifrando a Logística</h3>
+            <p>Analise as frases abaixo e indique: verdadeiro (V) ou falso (F).</p>
+            <form id="quiz-form">
+                <div class="quiz-question">
+                    <p>1. As empresas estão estruturadas em setores para otimizar suas operações, e a Logística atua
+                        transversalmente para assegurar que os fluxos dos processos ocorram sem gargalos e com
+                        eficiência.</p>
+                    <label><input type="radio" name="q1" value="V"> V</label>
+                    <label><input type="radio" name="q1" value="F"> F</label>
+                </div>
+                <div class="quiz-question">
+                    <p>2. A Logística é aplicada principalmente nas organizações privadas, pois estas visam
+                        prioritariamente a eficiência e o lucro.</p>
+                    <label><input type="radio" name="q2" value="V"> V</label>
+                    <label><input type="radio" name="q2" value="F"> F</label>
+                </div>
+                <div class="quiz-question">
+                    <p>3. O segmento industrial inicia as atividades da Logística antes do início da produção e se
+                        encerra quando os bens produzidos chegam até o cliente final.</p>
+                    <label><input type="radio" name="q3" value="V"> V</label>
+                    <label><input type="radio" name="q3" value="F"> F</label>
+                </div>
+                <div class="quiz-question">
+                    <p>4. Os conceitos de Logística não se aplicam à área de serviços.</p>
+                    <label><input type="radio" name="q4" value="V"> V</label>
+                    <label><input type="radio" name="q4" value="F"> F</label>
+                </div>
+                <button type="submit">Verificar Respostas</button>
+            </form>
+            <div id="quiz-feedback" class="feedback-area"></div>
+        </div>
+
+        <div id="challenge-2-container" class="challenge-box hidden">
+            <h3>Desafio 2: Análise de Dados Secretos</h3>
+            <p>O Grupo Sombra deixou um fragmento de dados de vendas. Use seus conhecimentos em Pandas para filtrar as
+                informações necessárias.</p>
+            <pre><code class="language-python">
+import pandas as pd
+data = {
+    "Date": ["April-10", "April-11", "April-12", "April-13", "April-14", "April-16"],
+    "Sales": [200, 300, 400, 200, 300, 300],
+    "Price": [3, 1, 2, 4, 3, 2]
+}
+df = pd.DataFrame(data)
+            </code></pre>
+            <p><strong>Sua Missão:</strong> Filtre as linhas onde o valor da coluna "Sales" é igual a 300.</p>
+            <textarea id="code-input-2" class="code-input-area"
+                placeholder="Escreva seu código Pandas aqui..."></textarea>
+            <button id="run-button-2" class="run-button">Executar Código</button>
+            <pre id="output-area-2" class="output-area"></pre>
+        </div>
+
+
+        <div id="challenge-3-container" class="challenge-box hidden">
+            <h3>Desafio 3: Quebrando a Criptografia Final</h3>
+            <p>Esta é a última barreira. Invoque os métodos corretos do objeto `user123` para descobrir a senha final e
+                restaurar o sistema.</p>
+            <pre><code class="language-python">
+class DadoProtegido:
+    def __init__(self, texto: str):
+        self._texto = texto
+    def exibir_dado_protegido(self):
+        print(f"Dado: '{self._texto}'")
+
+class Usuario(DadoProtegido):
+    def __init__(self, nome: str, texto_senha: str):
+        super().__init__(texto_senha)
+        self.nome = nome
+    def descobrir_senha(self) -> str:
+        return self._texto[::-1]
+
+# O objeto abaixo já existe para você usar:
+user123 = Usuario(nome="admin", texto_senha="sombra")
+
+            </code></pre>
+            <p><strong>Sua Missão:</strong> Escreva as duas linhas de código que chamam os <strong>2 Métodos</strong>
+                para exibir o dado protegido e descobrir a senha do `user123`.</p>
+            <textarea id="code-input-3" class="code-input-area"
+                placeholder="Escreva seu código Python aqui..."></textarea>
+            <button id="run-button-3" class="run-button">Executar Código</button>
+            <pre id="output-area-3" class="output-area"></pre>
+        </div>
+
+
+        <div id="challenge-3-container" class="challenge-box hidden">
+        </div>
+    </div>
+
+    <div id="success-container" class="hidden">
+        <pre id="success-output"></pre>
+
+        <div id="ranking-container" class="hidden">
+            <h2>Ranking Final</h2>
+            <div id="ranking-table"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="js/desafio.js"></script>
+</body>
+
+</html>
